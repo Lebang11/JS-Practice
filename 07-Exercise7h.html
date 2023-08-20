@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise 6</title>
+</head>
+<body>
+    <button onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+        updateCartQuantity(10, 1);
+    ">Add to Cart</button>
+
+    <button onclick="
+        updateCartQuantity(9, 2);
+    ">+2</button>
+
+    <button onclick="
+        updateCartQuantity(8, 3);
+    ">+3</button>
+
+    <button onclick="
+        updateCartQuantity(7, 4);
+    ">+4</button>
+
+    <button onclick="
+        updateCartQuantity(6, 5);
+    ">+5</button>
+
+    <button onclick="
+        reduceCartQuantity(0, 1);
+      ">Remove from cart</button>
+
+    <button onclick="
+        reduceCartQuantity(1, 2);
+    ">-2</button>
+
+    <button onclick="
+        reduceCartQuantity(2, 3);
+    ">-3</button>
+    
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+
+    <script>
+        let cartQuantity = 0;
+
+        function updateCartQuantity(quantityMax, add) {
+            if (cartQuantity > quantityMax) {
+                return (alert('The cart is full'));
+            }
+            cartQuantity += add;
+            console.log(cartQuantity);
+        }
+
+        function reduceCartQuantity(quantityMin, reduce) {
+            if (cartQuantity < quantityMin) {
+                return(alert('Not enough items in cart.'));
+            }
+            cartQuantity -= reduce;
+            console.log(cartQuantity);
+        }
+
+    </script>
+</body>
+</html>

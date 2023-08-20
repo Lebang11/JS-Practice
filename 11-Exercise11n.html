@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercise 11n</title>
+</head>
+<body>
+    <script>
+        words = ['apple', 'grape', 'apple', 'apple'];
+        objectWords = {}
+
+        countWords(words);
+
+        function countWords(words) {
+            for (i = 0; i < words.length; i++) {
+                if (!objectWords[words[i]]) {
+                    objectWords[words[i]] = 1
+                } else {
+                    objectWords[words[i]]++
+                }
+            }
+        }
+
+        console.log(objectWords)
+    </script>
+</body>
+</html>

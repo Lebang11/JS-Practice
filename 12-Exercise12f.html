@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button class="js-button" onclick="
+      displayMessage();
+      console.log(cartStatus)
+    ">Add to cart</button>
+    
+    <p class="js-message"></p>
+
+    <script>
+        let cartStatus = false;
+        let cartTime = undefined
+
+
+
+
+
+        function displayMessage() {
+            if (!cartStatus) {
+                cartStatus = true;
+                const messageElement = document.querySelector('.js-message');
+
+                clearInterval(cartTime);
+
+                messageElement.innerHTML = 'Added';
+                cartTime = setInterval(function() {
+                messageElement.innerHTML = '';
+                }, 2000);
+            } else if (cartStatus) {
+                cartStatus = false;
+                const messageElement = document.querySelector('.js-message');
+
+                clearInterval(cartTime);
+
+                messageElement.innerHTML = 'Added';
+                cartTime = setInterval(function() {
+                messageElement.innerHTML = '';
+                }, 2000);
+            }
+            
+            
+        }
+
+
+        
+    </script>
+  </body>
+</html>
